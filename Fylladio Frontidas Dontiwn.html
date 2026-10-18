@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Φροντίζω τα δόντια μου – Φύλλο εργασίας</title>
+<style>
+:root{--ink:#1d3048;--mint:#c4efe7;--teal:#0f7f79;--paper:#fbfefe}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:21px/1.55 "Segoe UI",Roboto,Arial,sans-serif}
+main{max-width:880px;margin:0 auto;padding:24px 20px 24px}
+header{display:flex;gap:20px;align-items:center;border-bottom:6px solid var(--mint);padding-bottom:16px}
+header svg{width:84px;flex:none}
+h1{font-size:2.1rem;line-height:1.2;margin:0}
+.sub{margin:4px 0 0;color:var(--teal);font-weight:600}
+.who{display:flex;gap:24px;flex-wrap:wrap;margin:20px 0}
+.who label{flex:1 1 280px}
+input[type=text],textarea{font:inherit;width:100%;border:0;border-bottom:2px solid var(--ink);background:transparent;padding:4px 2px;color:inherit}
+textarea{border:2px solid var(--ink);border-radius:10px;padding:10px;min-height:120px}
+.fact{background:var(--mint);padding:14px 18px;border-radius:12px;margin:8px 0 30px}
+section{border-left:8px solid var(--mint);padding:2px 0 2px 20px;margin:0 0 38px}
+h2{font-size:1.45rem;margin:0 0 6px}
+.hint{margin:0 0 10px;color:#44566e}
+.row{padding:8px 12px;border-radius:10px;margin:6px 0}
+.row.good{background:#dcf4e5}.row.bad{background:#fbe0e5}
+.fb{display:block;font-style:normal;font-size:.9em;min-height:1px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:0 28px}
+select{font:inherit;color:inherit;border:2px solid var(--ink);border-radius:8px;padding:2px 6px;background:#fff}
+.pill{display:inline-block;border:2px solid var(--ink);border-radius:999px;padding:2px 16px;margin:4px 8px 0 0;cursor:pointer;background:#fff}
+.pill input{position:absolute;opacity:0}
+.pill:has(input:checked){background:var(--ink);color:#fff}
+.pill:has(input:focus-visible){outline:3px solid var(--teal);outline-offset:2px}
+button{font:inherit;font-weight:700;background:var(--teal);color:#fff;border:0;border-radius:10px;padding:8px 22px;cursor:pointer;margin:10px 8px 0 0}
+button.ghost{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.score{font-weight:700}
+table{border-collapse:collapse;width:100%;text-align:center}
+th,td{border:2px solid var(--ink);padding:6px 2px}
+td input{width:30px;height:30px}
+footer{border-top:2px solid var(--mint);margin-top:20px;padding-top:14px;text-align:center;color:#44566e}
+@media print{button,.score{display:none}body{font-size:18px}section{break-inside:avoid}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<svg viewBox="0 0 64 80" aria-hidden="true"><path d="M32 8c-8-6-22-4-24 10-2 14 6 20 8 34 1 8 4 20 9 20 4 0 4-14 7-14s3 14 7 14c5 0 8-12 9-20 2-14 10-20 8-34C54 4 40 2 32 8z" fill="#fff" stroke="#1d3048" stroke-width="4" stroke-linejoin="round"/></svg>
+<div><h1>Φροντίζω τα δόντια μου</h1><p class="sub">Εργαστήρια Δεξιοτήτων, Δ΄ Τάξη</p></div>
+</header>
+
+<div class="who"><label>Όνομα: <input type="text"></label><label>Ημερομηνία: <input type="text"></label></div>
+
+<div class="fact"><b>Ήξερες ότι;</b> Οι άνθρωποι έχουμε δύο σειρές δοντιών: τα παιδικά (νεογιλά) δόντια είναι 20 και τα μόνιμα είναι συνήθως 32.</div>
+
+<section id="e1">
+<h2>Άσκηση 1. Ποιος κάνει τι;</h2>
+<p class="hint">Διάλεξε τη σωστή λέξη. Μπορείς να κοιτάξεις και το σχέδιο με τα δόντια που ζωγράφισες.</p>
+<div class="row" data-ok="κόβουν">Οι <b>κοπτήρες</b> (μπροστά, πλατιοί) <select><option value="">…</option><option>κόβουν</option><option>σκίζουν</option><option>αλέθουν</option></select> την τροφή.<em class="fb"></em></div>
+<div class="row" data-ok="σκίζουν">Οι <b>κυνόδοντες</b> (μυτεροί) <select><option value="">…</option><option>κόβουν</option><option>σκίζουν</option><option>αλέθουν</option></select> την τροφή.<em class="fb"></em></div>
+<div class="row" data-ok="αλέθουν">Οι <b>προγόμφιοι και οι γομφίοι</b> (πίσω, με πλατιά επιφάνεια) <select><option value="">…</option><option>κόβουν</option><option>σκίζουν</option><option>αλέθουν</option></select> την τροφή.<em class="fb"></em></div>
+<button onclick="check('e1')">Έλεγχος</button><button class="ghost" onclick="again('e1')">Ξανά</button><span class="score" role="status"></span>
+</section>
+
+<section id="e2">
+<h2>Άσκηση 2. Φίλος ή εχθρός των δοντιών;</h2>
+<p class="hint">Για κάθε τροφή διάλεξε αν είναι φίλος ή εχθρός των δοντιών.</p>
+<div class="grid" id="foods"></div>
+<button onclick="check('e2')">Έλεγχος</button><button class="ghost" onclick="again('e2')">Ξανά</button><span class="score" role="status"></span>
+</section>
+
+<section id="e3">
+<h2>Άσκηση 3. Σωστό ή Λάθος;</h2>
+<div id="tf"></div>
+<button onclick="check('e3')">Έλεγχος</button><button class="ghost" onclick="again('e3')">Ξανά</button><span class="score" role="status"></span>
+</section>
+
+<section>
+<h2>Άσκηση 4. Το ημερολόγιό μου</h2>
+<p class="hint">Τσέκαρε κάθε φορά που βουρτσίζεις τα δόντια σου.</p>
+<table><tr><th></th><th>Δευ</th><th>Τρί</th><th>Τετ</th><th>Πέμ</th><th>Παρ</th><th>Σάβ</th><th>Κυρ</th></tr>
+<tr><th>Πρωί</th><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td></tr>
+<tr><th>Βράδυ</th><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td></tr></table>
+</section>
+
+<section>
+<h2>Άσκηση 5. Πείσε έναν φίλο</h2>
+<p class="hint">Γράψε ένα σύντομο σύνθημα ή μια συμβουλή για έναν φίλο σου που δεν θέλει να βουρτσίσει τα δόντια του.</p>
+<textarea aria-label="Το σύνθημά μου"></textarea>
+</section>
+
+<footer>© myspiderwebsite</footer>
+</main>
+<script>
+const foods=[["νερό",1],["καραμέλες",0],["γάλα (σκέτο)",1],["αναψυκτικό με ζάχαρη",0],["τυρί",1],["γλειφιτζούρι",0],["καρότο",1],["γλυκά όλη μέρα",0]];
+const tf=[["Βουρτσίζουμε τα δόντια μας τουλάχιστον δύο φορές τη μέρα.",1,"Σωστό: ένα πρωί και ένα βράδυ."],
+["Αρκεί να βουρτσίζουμε τα δόντια μας 10 δευτερόλεπτα.",0,"Λάθος: χρειάζονται περίπου 2 λεπτά."],
+["Αν χάσουμε ένα μόνιμο δόντι, ξαναβγαίνει στη θέση του.",0,"Λάθος: τα μόνιμα δόντια δεν ξαναβγαίνουν."],
+["Η οδοντόκρεμα με φθόριο βοηθά να προστατεύεται το σμάλτο των δοντιών.",1,"Σωστό: το φθόριο προστατεύει το σμάλτο."],
+["Την οδοντόκρεμα δεν την καταπίνουμε, τη φτύνουμε.",1,"Σωστό: τη φτύνουμε μετά το βούρτσισμα."]];
+const pills=(n,a,b)=>`<label class="pill"><input type="radio" name="${n}" value="1">${a}</label><label class="pill"><input type="radio" name="${n}" value="0">${b}</label>`;
+document.getElementById('foods').innerHTML=foods.map((f,i)=>`<div class="row" data-ok="${f[1]}"><b>${f[0]}</b><br>${pills('f'+i,'Φίλος','Εχθρός')}<em class="fb"></em></div>`).join('');
+document.getElementById('tf').innerHTML=tf.map((q,i)=>`<div class="row" data-ok="${q[1]}" data-why="${q[2]}">${q[0]}<br>${pills('t'+i,'Σωστό','Λάθος')}<em class="fb"></em></div>`).join('');
+function val(r){const s=r.querySelector('select');if(s)return s.value;const c=r.querySelector('input:checked');return c?c.value:''}
+function check(id){const rows=[...document.querySelectorAll('#'+id+' .row')];let n=0;
+rows.forEach(r=>{const v=val(r),ok=v===r.dataset.ok;if(ok)n++;r.classList.toggle('good',ok);r.classList.toggle('bad',v!==''&&!ok);
+r.querySelector('.fb').textContent=ok?'✓ Μπράβο!':v===''?'Απάντησε πρώτα.':'✗ '+(r.dataset.why||'Δοκίμασε ξανά.')});
+document.querySelector('#'+id+' .score').textContent='Σωστά: '+n+' από '+rows.length}
+function again(id){document.querySelectorAll('#'+id+' select').forEach(s=>s.value='');document.querySelectorAll('#'+id+' input').forEach(i=>i.checked=false);
+document.querySelectorAll('#'+id+' .row').forEach(r=>{r.classList.remove('good','bad');r.querySelector('.fb').textContent=''});document.querySelector('#'+id+' .score').textContent=''}
+</script>
+</body>
+</html>
